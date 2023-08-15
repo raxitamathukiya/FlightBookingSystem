@@ -2,6 +2,119 @@ const express=require('express')
 const flightRouter=express.Router()
 const {flightModel}=require('../Model/Flight.Model')
 
+/**
+* @swagger
+* components:
+*   schemas:
+*       Flights:
+*       type: object
+*       properties:
+*           id:
+*               type: string
+*               description: The auto-generated id of the user
+*           airline:
+*               type: string
+*               description: The airline
+*           flightNo:
+*               type: string
+*               description: The flightNo
+*           arrival:
+*               type: string
+*               description: The arrival
+*           departureTime:
+*               type: date
+*               description: The departureTime
+*           arrivalTime:
+*               type: date
+*               description: The arrivalTime
+*           seats:
+*               type: number
+*               description: The seats number
+*           price:
+*               type: number
+*               description: The price
+*/
+
+
+/**
+ * @swagger
+ * tags:
+ *  name: Flights
+ *  description: All the API routes realeted the Flights
+ */
+/**
+ * @swagger
+ * /api/flights:
+ *  post:
+ *      summary: This will Add new flights from DataBase
+ *      tags: [Flights]
+ *      responses:
+ *          200:
+ *              description: Add New flights 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
+/**
+ * @swagger
+ * /api/flights:
+ *  get:
+ *      summary: This will  show all flights from DataBase
+ *      tags: [Flights]
+ *      responses:
+ *          200:
+ *              description: show all flights data
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
+/**
+ * @swagger
+ * /api/flights/:id:
+ *  get:
+ *      summary: This will show flights data based on id parhams from DataBase
+ *      tags: [Flights]
+ *      responses:
+ *          200:
+ *              description: show only one flight data 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
+/**
+ * @swagger
+ * /api/flights/:id:
+ *  put:
+ *      summary: This will Update flights data from DataBase
+ *      tags: [Flights]
+ *      responses:
+ *          200:
+ *              description: successfully Update the data 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
+/**
+ * @swagger
+ * /api/flights/:id:
+ *  delete:
+ *      summary: This will delete the flights from DataBase
+ *      tags: [Flights]
+ *      responses:
+ *          200:
+ *              description: delete the flights 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+// airline: {type:String,require:true},
+//     flightNo: {type:String,require:true},
+//     departure: {type:String,require:true},
+//     arrival: {type:String,require:true},
+//     departureTime: {type:Date,require:true},
+//     arrivalTime: {type:Date,require:true},
+//     seats: {type:Number,require:true},
+//     price: {type:Number,require:true}
+
 flightRouter.post('/flights',async(req,res)=>{
     try {
         const {airline,

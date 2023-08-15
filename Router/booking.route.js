@@ -1,6 +1,85 @@
 const express=require('express')
 const bookingRouter=express.Router()
 const {bookingModel}=require('../Model/Booking.Model')
+
+/**
+* @swagger
+* components:
+*   schemas:
+*       Booking:
+*       type: object
+*       properties:
+*           id:
+*               type: string
+*               description: The auto-generated id of the user
+*           user:
+*               type: string
+*               description: The user id
+*           flight:
+*               type: string
+*               description: The flight id
+*          
+*/
+
+
+/**
+ * @swagger
+ * tags:
+ *  name: Booking
+ *  description: All the API routes realeted the Booking
+ */
+/**
+ * @swagger
+ * /api/booking:
+ *  post:
+ *      summary: This will Add new booking data from DataBase
+ *      tags: [Booking]
+ *      responses:
+ *          200:
+ *              description: successfully booking done 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
+/**
+ * @swagger
+ * /api/dashboard:
+ *  get:
+ *      summary: This will show all booking data from DataBase
+ *      tags: [Booking]
+ *      responses:
+ *          200:
+ *              description: show booking data 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
+/**
+ * @swagger
+ * /api/dashboard/:id:
+ *  put:
+ *      summary: This will update booking data from DataBase
+ *      tags: [Booking]
+ *      responses:
+ *          200:
+ *              description: update booking data 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
+/**
+ * @swagger
+ * /api/dashboard/:id:
+ *  delete:
+ *      summary: This will delete booking data from DataBase
+ *      tags: [Booking]
+ *      responses:
+ *          200:
+ *              description: delete booking data 
+ *          400:
+ *              description: Inccorect Request!!!!
+ */
+
 bookingRouter.post("/booking",async(req,res)=>{
     try {
         const { user,flight  }=req.body
